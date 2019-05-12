@@ -1,5 +1,6 @@
 import getpass
-import getpass
+import random
+import string
 from user import User
 from credentials import Credentials
 
@@ -47,6 +48,12 @@ def delete_credentials(self):
     '''
     Credentials.credentials_list.remove(self)
 
+def display_credentials(cls):
+    '''
+    method that returns the user list
+    '''
+    return cls.credentials_list
+
 def mitch():
   print("WELCOME TO PASSWORD-LOCKER.")
 def mitch1():  
@@ -80,10 +87,31 @@ def mitch1():
         print("Enter your password.")
         password3 = getpass.getpass("password:") 
         if check_existing_user(password3):
-           search_account = find_account(password3)
-           if True:
-             print("welcome " + {search_account.username})
-             print("Press 1 = New credentials ")
+            search_account = find_account(password3)
+            if True:
+              print("welcome " + {search_account.username})
+              print("Press 1 = New credential. / Press 2 = View existing credentials / Press 3 = Delete credentials.")
+              legacy = input()
+              if legacy == "1":
+                print("Enter account name.")
+                account = input()
+                print("Press 1 = To make your own password / Press 2 = Generate a password.")
+                passwrd = input()
+                if passwrd == "1":
+                  letters = string.ascii_letters + string.digits
+                  genpassword = ''.join(random.choice(letters) for i in range(9))
+                  print("Your new generated password is: {gpassword}")
+                  password = genpassword 
+                elif passwrd == "2":
+                  print("Enter account password.")
+                  password = input()
+                  print("{account} has been successfully saved")
+                save_credentials(create_credentials(account,password))
+              elif legacy == "2":
+                if display_credentials:
+                  print("⇨ Here is a list of all your accounts and passwords")
+                  for Credentials in display_credentials():
+                    print(f"Account name: {credentials.account} - password: {credentials.password}")
       elif logorsign == "3":
         exit()
     else:
