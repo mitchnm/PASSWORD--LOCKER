@@ -7,15 +7,16 @@ class User:
     def __init__(self,username,password):
       self.username = username
       self.password = password
+
     def save_user(self):
         '''
-        save_user method to save new users into user_list
+        save_user method to save new users into the list
         '''
         User.user_list.append(self)
 
     def delete_user(self):
         '''
-        delete method to delete saved user from the user list
+        delete method to delete saved user from list
         '''
         User.user_list.remove(self)
 
