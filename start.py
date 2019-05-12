@@ -1,3 +1,6 @@
+import getpass
+
+
 def mitch():
   print("WELCOME TO PASSWORD-LOCKER.")
 def mitch1():  
@@ -9,10 +12,20 @@ def mitch1():
     if one == "1":
       print("Welcome to password-locker.Would you like to sign up/log in")
       print("press 1 = sign up / press 2 = log in")
-      log_sign = input()
-      if log_sign == "1":
-        print("Awesome.Please enter your preffered username.")
-      elif log_sign == "2":
+      logorsign = input()
+
+      if logorsign == "1":  
+        print("Awesome!Please enter your preffered username.")
+        username = input()
+        print("Enter a preffered password.")
+        password1 = getpass.getpass("password:")
+        print("Confirm your password please.")
+        password2 = getpass.getpass("password:")
+        if password1 == password2:
+          print("new user {username} created")
+        else:
+          print("Sorry passwords don't match.")  
+      elif logorsign == "2":
         print("Enter your username")
     else:
       print("Are you that stupid.Please press 1")  
