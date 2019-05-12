@@ -29,12 +29,12 @@ class TestUser(unittest.TestCase):
         list of a user
         '''
         self.new_credential.save_credentials()
-        self.assertEqual(len(Credentials.credential_list),1)
+        self.assertEqual(len(Credentials.credentials_list),1)
     def test_display_credentials(self):
         '''
         test to display the credentials of a user
         '''
-        self.assertEqual(Credentials.display_credentials(),Credentials.credential_list)
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
     def test_delete_credential(self):
         '''
         test_delete_credential to see if we can remove a 
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
         test_credential = Credentials("test","0893uhjnv")
         test_credential.save_credentials()
         self.new_credential.delete_credentials()
-        self.assertEqual(len(Credentials.credential_list),1)
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 if __name__ == '__main__':
     unittest.main()
