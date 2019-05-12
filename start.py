@@ -34,6 +34,7 @@ def mitch1():
         password1 = getpass.getpass("password:")
         print("Confirm your password please.")
         password2 = getpass.getpass("password:")
+        save_users(create_user(username,password1)) 
         if password1 == password2:
           print("New user: " + username + " created.")
           print("Choose log in this time.")
