@@ -23,6 +23,18 @@ def save_user(user):
     '''
     user.save_user()
 
+def check_existing_user(password):
+    '''
+    function to check that enable login authentification
+    '''
+    return User.user_exist(password)
+
+def find_account(password):
+    '''
+    function to find account by its name
+    '''
+    return User.find_account(password)
+
 def save_credentials(self):
     '''
     save_user method to save new users into the list
@@ -45,7 +57,7 @@ def mitch1():
     one = input()
     if one == "1":
       print("Welcome to password-locker.Would you like to sign up/log in")
-      print("Press 1 = sign up / Press 2 = log in")
+      print("Press 1 = sign up / Press 2 = log in / Press 3 = exit")
       logorsign = input()
       if logorsign == "1":  
         print("Awesome!Please enter your preffered username.")
@@ -55,18 +67,25 @@ def mitch1():
         print("Confirm your password please.")
         password2 = getpass.getpass("password:")
         if password1 == password2:
-          save_user(create_user(username,password1)) 
           print("New user: " + username + " created.")
           print("Choose log in this time.")
+          save_user(create_user(username,password1)) 
           mitch1()
         else:
           print("Sorry passwords don't match.")  
+          mitch1()
       elif logorsign == "2":
         print("Enter your username.")
         username1 = input()
         print("Enter your password.")
         password3 = getpass.getpass("password:") 
-        
+        if check_existing_user(password3):
+           search_account = find_account(password3)
+           if True:
+             print("welcome " + {search_account.username})
+             print("Press 1 = New credentials ")
+      elif logorsign == "3":
+        exit()
     else:
       print("Are you that stupid.Please press 1")  
       mitch1()
