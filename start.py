@@ -3,11 +3,11 @@ import getpass
 from user import User
 from credentials import Credentials
 
-def create_user(first_name , last_name):
+def create_user(username,password1):
     '''
     Function to create new user
     '''
-    new_user = User(first_name , last_name)
+    new_user = User(username,password1)
     return new_user
 
 def create_credentials(account_name,password):
@@ -17,7 +17,7 @@ def create_credentials(account_name,password):
     new_credentials = User(account_name,password)
     return new_credentials 
 
-def save_users(user):
+def save_user(user):
     '''
     function to save user
     '''
@@ -54,8 +54,8 @@ def mitch1():
         password1 = getpass.getpass("password:")
         print("Confirm your password please.")
         password2 = getpass.getpass("password:")
-        save_users(create_user(username,password1)) 
         if password1 == password2:
+          save_user(create_user(username,password1)) 
           print("New user: " + username + " created.")
           print("Choose log in this time.")
           mitch1()
@@ -66,7 +66,7 @@ def mitch1():
         username1 = input()
         print("Enter your password.")
         password3 = getpass.getpass("password:") 
-
+        
     else:
       print("Are you that stupid.Please press 1")  
       mitch1()
@@ -75,13 +75,6 @@ def mitch1():
   else:
     print("Invalid choice.Try again.")  
     mitch1()
-
-
-
-
-
-
-
 
 mitch()
 mitch1()
