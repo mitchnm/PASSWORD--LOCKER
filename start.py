@@ -23,6 +23,12 @@ def save_user(user):
     function to save user
     '''
     user.save_user()
+ 
+def save_credentials(self):
+    '''
+    save_user method to save new users into the list
+    '''
+    Credentials.credentials_list.append(self)
 
 def check_existing_user(password):
     '''
@@ -35,12 +41,6 @@ def find_account(password):
     function to find account by its name
     '''
     return User.find_account(password)
-
-def save_credentials(self):
-    '''
-    save_user method to save new users into the list
-    '''
-    Credentials.credentials_list.append(self)
 
 def delete_credentials(self):
     '''

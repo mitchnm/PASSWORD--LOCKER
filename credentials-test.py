@@ -21,7 +21,7 @@ class TestUser(unittest.TestCase):
         '''
         TearDown method that does clean up after each test case has run.
         '''
-        Credentials.credential_list = []
+        Credentials.credentials_list = []
 
     def test_save_credential(self):
         '''
@@ -30,11 +30,13 @@ class TestUser(unittest.TestCase):
         '''
         self.new_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+    
     def test_display_credentials(self):
         '''
         test to display the credentials of a user
         '''
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+    
     def test_delete_credential(self):
         '''
         test_delete_credential to see if we can remove a 
