@@ -1,5 +1,19 @@
 import getpass
+import getpass
+from user import User
 
+def create_user(first_name , last_name):
+    '''
+    Function to create new user
+    '''
+    new_user = User(first_name , last_name)
+    return new_user
+
+def save_users(user):
+    '''
+    function to save user
+    '''
+    user.save_user()
 
 def mitch():
   print("WELCOME TO PASSWORD-LOCKER.")

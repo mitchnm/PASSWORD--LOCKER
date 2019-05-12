@@ -2,7 +2,7 @@ class Credentials:
     '''
     class that generates new credentials intsances
     '''
-    
+
     credentials_list = [] 
 
     def __init__(self,account_name,password):
@@ -11,3 +11,4 @@ class Credentials:
         '''
         self.account_name = account_name
         self.password = password
+        
