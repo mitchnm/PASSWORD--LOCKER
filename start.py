@@ -1,6 +1,7 @@
 import getpass
 import getpass
 from user import User
+from credentials import Credentials
 
 def create_user(first_name , last_name):
     '''
@@ -9,11 +10,30 @@ def create_user(first_name , last_name):
     new_user = User(first_name , last_name)
     return new_user
 
+def create_credentials(account_name,password):
+    '''
+    Function to create new account
+    '''
+    new_credentials = User(account_name,password)
+    return new_credentials 
+
 def save_users(user):
     '''
     function to save user
     '''
     user.save_user()
+
+def save_credentials(self):
+    '''
+    save_user method to save new users into the list
+    '''
+    Credentials.credentials_list.append(self)
+
+def delete_credentials(self):
+    '''
+    delete method to delete saved information from the list
+    '''
+    Credentials.credentials_list.remove(self)
 
 def mitch():
   print("WELCOME TO PASSWORD-LOCKER.")
@@ -46,6 +66,7 @@ def mitch1():
         username1 = input()
         print("Enter your password.")
         password3 = getpass.getpass("password:") 
+
     else:
       print("Are you that stupid.Please press 1")  
       mitch1()
