@@ -27,8 +27,10 @@ def mitch1():
         else:
           print("Sorry passwords don't match.")  
       elif logorsign == "2":
-        print("Enter your username")
-        username
+        print("Enter your username.")
+        username1 = input()
+        print("Enter your password.")
+        password3 = getpass.getpass("password:") 
     else:
       print("Are you that stupid.Please press 1")  
       mitch1()
