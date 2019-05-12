@@ -48,11 +48,11 @@ def delete_credentials(self):
     '''
     Credentials.credentials_list.remove(self)
 
-def display_credentials(cls):
+def display_credentials():
     '''
     method that returns the user list
     '''
-    return cls.credentials_list
+    return User.display_users()
 
 def mitch():
   print("WELCOME TO PASSWORD-LOCKER.")
@@ -100,18 +100,28 @@ def mitch1():
                 if passwrd == "1":
                   letters = string.ascii_letters + string.digits
                   genpassword = ''.join(random.choice(letters) for i in range(9))
-                  print("Your new generated password is: {gpassword}")
+                  print("Your new generated password is: " + {gpassword})
                   password = genpassword 
                 elif passwrd == "2":
                   print("Enter account password.")
                   password = input()
-                  print("{account} has been successfully saved")
+                  print({account} + " has been successfully saved")
                 save_credentials(create_credentials(account,password))
               elif legacy == "2":
                 if display_credentials:
                   print("⇨ Here is a list of all your accounts and passwords")
                   for Credentials in display_credentials():
-                    print(f"Account name: {credentials.account} - password: {credentials.password}")
+                    print("Account name: " + {Credentials.account} " // password: " + {Credentials.password})
+              elif legacy == "3":
+                print("Which credential would you like to delete?")
+                delaccount = input()
+                if delaccount == account:
+                  Credentials.credential_list.remove(Credentials)
+                  print("Credential deleted")
+                else:
+                  print("No match of such a credential")   
+        else:
+          print("Incorrect password.Try again.")             
       elif logorsign == "3":
         exit()
     else:
