@@ -10,13 +10,13 @@ class TestUser(unittest.TestCase):
     '''
     def setUp(self):
         '''
-        Set up method to run before each test cases.
+        Set up method to run before each test case.
         '''
         self.new_user = User("qwerty","mmmmmm")
 
     def tearDown(self):
         '''
-        tearDown method that does clean up after each test case has run.
+        TearDown method that does clean up after each test case has run.
         '''
         User.user_list = []
 
@@ -29,15 +29,15 @@ class TestUser(unittest.TestCase):
     
     def test_save_user(self):
         '''
-        test_save_contact test case to test if the contact object is saved into the contact list.
+        test_save_user test case to test if the user object is saved into the user list.
         '''
         self.new_user.save_user() 
         self.assertEqual(len(User.user_list),1)
     
     def test_save_multiple_user(self):
         '''
-        test_save_multiple_contact to check if we can save multiple contact.
-        objects to our contact_list
+        test_save_multiple_user to check if we can save multiple user
+        objects to our user_list
         '''
         self.new_user.save_user() 
         test_user = User("qwerty","mmmmmm") 
