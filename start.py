@@ -76,5 +76,6 @@ def mitch1():
     print("Invalid choice.Try again.")  
     mitch1()
 
-mitch()
-mitch1()
+if __name__ == '__main__':
+  mitch()
+  mitch1()
