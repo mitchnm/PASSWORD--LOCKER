@@ -1,5 +1,6 @@
-# Githubsearch
-This project was generated with python version 3.6
+# PASSWORD-LOCKER
+
+* This project was generated with python version 3.6
 
 #### By **MITCH MUHU**
 
@@ -7,22 +8,19 @@ This project was generated with python version 3.6
 This is an app which one can save account names and their passwords one only needs to have an account so as to save their information. 
 
 ## Technologies used
-1. Python
+* Python
 
 ### How it works
-The application allows the user to input a name in a search bar and the details about the matched account name on git hub are displayed.
+The application allows the user to create an account and save his/her credentials there.
 
 | Behaviour                        | Input                          | Output                                 |
-| :--------------------------------| :------------------------------|:---------                              |
-| Accepts correct login credentials| User name & password           | Welcome 'User-name'                    | 
-| Choose option                    | Select one of the short codes  | Enable feature for that particular code|
-| Take user data                   | User data                      | User information|
-| Generate password                | Select password generate option| New password|
-| Delete credentials               | Choose delete credentials      | Credentials are deleted|
-| Exit app                         | Select exit choice             | App closes|
+| :--------------------------------| :------------------------------|:---------------------------------------|
+| Accepts correct login credentials| User name & password           | Welcome 'Username'                     | 
+| Choose option                    | Select one of the options      | Enable feature for that option         |
+| Generate password                | Select password generate option| New password                           |
+| Exit app                         | Select exit choice             | App closes                             |
 
 # Using the app
-## Development server
 1. Clone the repository using `git clone https://github.com/mitchnm/PASSWORD--LOCKER.git`.
 2. Open the directory of the application using your terminal
 3. Run 'python3.6 start.py'

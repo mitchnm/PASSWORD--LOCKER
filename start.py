@@ -88,7 +88,7 @@ def mitch1():
         password3 = getpass.getpass("password:") 
         if check_existing_user(password3):
             search_account = find_account(password3)
-            while True:
+            if True:
               print(f"welcome  {search_account.username}")
               print("Press 1 = New credential. / Press 2 = View existing credentials / Press 3 = Delete credentials.")
               legacy = input()
@@ -100,8 +100,9 @@ def mitch1():
                 if passwrd == "1":
                   letters = string.ascii_letters + string.digits
                   genpassword = ''.join(random.choice(letters) for i in range(9))
-                  print(f"Your new generated password is: {genpassword} ")
+                  print(f"Your new generated password is: {genpassword}") 
                   password = genpassword 
+                  print(f"{account_name} +  has been successfully saved") 
                 elif passwrd == "2":
                   print("Enter account password.")
                   password = input()
@@ -121,7 +122,8 @@ def mitch1():
                 else:
                   print("No match of such a credential")   
         else:
-          print("Incorrect password.Try again.")             
+          print("Incorrect username or password.Try again.")   
+          mitch1()
       elif logorsign == "3":
         exit()
     else:
