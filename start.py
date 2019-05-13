@@ -87,11 +87,12 @@ def mitch1():
         print("Enter your password.")
         password3 = getpass.getpass("password:") 
         if check_existing_user(password3):
-            search_account = find_account(password3)
-            if True:
-              print(f"welcome  {search_account.username}")
-              print("Press 1 = New credential. / Press 2 = View existing credentials / Press 3 = Delete credentials.")
-              legacy = input()
+          search_account = find_account(password3)
+          if True:
+            print(f"welcome  {search_account.username}")
+            print("Press 1 = New credential. / Press 2 = View existing credentials / Press 3 = Delete credentials.")
+            legacy = input()
+            def credent():
               if legacy == "1":
                 print("Enter account name.")
                 account_name = input()
@@ -104,23 +105,24 @@ def mitch1():
                   password = genpassword 
                   print(f"{account_name} +  has been successfully saved") 
                 elif passwrd == "2":
-                  print("Enter account password.")
-                  password = input()
-                  print(f"{account_name} +  has been successfully saved")
-                save_credentials(create_credentials(account_name,password))
-              elif legacy == "2":
-                if display_credentials:
-                  print("Here is a list of all your accounts and passwords")
-                  for Credentials in display_credentials():
-                    print(f"Account name: {Credentials.account_name}  // password: {Credentials.password}")
-              elif legacy == "3":
-                print("Which credential would you like to delete?")
-                delaccount = input()
-                if delaccount == account_name:
-                  Credentials.credentials_list.remove(Credentials)
-                  print("Credential deleted")
-                else:
-                  print("No match of such a credential")   
+                    print("Enter account password.")
+                    password = input()
+                    print(f"{account_name} +  has been successfully saved")
+                    credent()
+                    save_credentials(create_credentials(account_name,password))
+                elif legacy == "2":
+                  if display_credentials:
+                    print("Here is a list of all your accounts and passwords")
+                    for Credentials in display_credentials():
+                      print(f"Account name: {Credentials.account_name}  // password: {Credentials.password}")
+                elif legacy == "3":
+                  print("Which credential would you like to delete?")
+                  delaccount = input()
+                  if delaccount == account_name:
+                    Credentials.credentials_list.remove(Credentials)
+                    print("Credential deleted")
+                  else:
+                    print("No match of such a credential")   
         else:
           print("Incorrect username or password.Try again.")   
           mitch1()
