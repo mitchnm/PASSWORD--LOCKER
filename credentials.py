@@ -17,13 +17,16 @@ class Credentials:
         save_user method to save new users into the list
         '''
         Credentials.credentials_list.append(self)
-
-    def delete_credentials(self):
+    
+    @classmethod
+    def delete_credentials(cls,account_name,password):
         '''
         delete method to delete saved user from list
         '''
-        Credentials.credentials_list.remove(self)
-
+        for Credentials in cls.credentials_list:
+          if Credentials.account_name == account_name:
+            return Credentials
+    
     @classmethod
     def display_credentials(cls):
         '''

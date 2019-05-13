@@ -103,9 +103,10 @@ def mitch1():
                 print(f"Your new generated password is: {genpassword}") 
                 password = genpassword 
                 print(f"{account_name} has been successfully saved") 
+                mitch1()
               elif passwrd == "2":
                 print("Enter account password.")
-                password = input()
+                password = getpass.getpass("password:") 
                 print(f"{account_name} +  has been successfully saved")
                 mitch1()
                 save_credentials(create_credentials(account_name,password))
